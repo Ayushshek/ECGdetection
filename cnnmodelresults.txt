@@ -1,0 +1,31 @@
+configuration 1
+Encoder:
+
+Conv1D Layer 1: 64 filters, kernel size 5, activation ReLU
+
+Conv1D Layer 2: 64 filters, kernel size 5, activation ReLU
+
+Flatten
+
+Dense latent layer: 32 units
+
+Overall error rate:  0.151084  (n=11113)
+Normal error rate:   0.037891  (n=607)
+Abnormal error rate: 0.157624  (n=10506)
+
+
+configuration 2 
+Encoder:
+
+Conv1D Layer 1: 64 filters, kernel size 3, activation ReLU
+
+Conv1D Layer 2: 64 filters, kernel size 3, activation ReLU
+
+Flatten
+
+Dense latent layer: 16 units
+
+Overall error rate: 0.000990 (n=11113) 
+Normal error rate: 0.018122 (n=607) 
+Abnormal error rate: 0.000000 (n=10506)
+
