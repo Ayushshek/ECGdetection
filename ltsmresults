@@ -1,1 +1,24 @@
+configuration 1
+
+Encoder:
+
+LSTM Layer 1: 128 units, return_sequences=True
+LSTM Layer 2: 64 units, return_sequences=False
+Dense latent layer: 8 units
+
+Overall error rate: 0.741744 (n=11113)
+Normal error rate: 0.051071 (n=607)
+Abnormal error rate: 0.781649 (n=10506)
+
+configuration 2
+
+Encoder:
+
+LSTM Layer 1: 64 units, return_sequences=True, dropout=0.2, recurrent_dropout=0.2
+LSTM Layer 2: 32 units, return_sequences=False, dropout=0.2, recurrent_dropout=0.2
+Dense latent layer: 8 units
+
+Overall error rate: 0.742284 (n=11113)
+Normal error rate: 0.051071 (n=607)
+Abnormal error rate: 0.782220 (n=10506)
 
