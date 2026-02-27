@@ -1,0 +1,19 @@
+Conclusion
+
+This project compared CNN and LSTM autoencoders for reconstruction-based anomaly detection on ECG heartbeat signals from the PTB Diagnostic dataset.
+
+Across all configurations tested, the CNN autoencoder significantly outperformed the LSTM autoencoder in detecting abnormal heartbeats.
+The best CNN configuration achieved an overall error rate of 0.000990, with a near-zero abnormal misclassification rate, demonstrating strong separation between normal and abnormal reconstruction errors. 
+In contrast, all LSTM configurations produced overall error rates above 0.74, with abnormal misclassification rates above 0.78, meaning the majority of abnormal samples were incorrectly reconstructed as normal.
+
+The key reason for this performance difference lies in how each architecture processes the signal:
+
+CNNs are highly effective at extracting local spatial patterns using convolutional filters. 
+ECG heartbeats contain localized waveform structures (P wave, QRS complex, T wave), and convolutional layers are well-suited to learning these short-range morphological features.
+
+LSTMs, while powerful for long-term temporal dependencies, may not be optimal for fixed-length heartbeat segments where local waveform shape is more important than long sequential memory.
+
+Additionally, the CNN architecture introduces fewer sequential dependencies, allowing more stable and efficient learning. 
+The LSTM models likely struggled because anomaly detection via reconstruction requires sharp feature compression, and recurrent architectures may blur fine-grained waveform distinctions.
+
+Overall, this experiment demonstrates that for fixed-length ECG heartbeat reconstruction and anomaly detection, CNN-based autoencoders are significantly more effective than LSTM-based autoencoders, particularly when anomalies are characterized by morphological deviations rather than long-range temporal patterns.
